@@ -98,7 +98,8 @@ This command shows the secret information including the URI. After completing th
 1. In Visual Studio, select **key-vault-dotnet-core-quickstart** Project.
 2. Select **Publish** then **Start**.
 3. Create a new **App Service**, select **Publish**.
-4. Select **Create**.
+4. Change the App Name to be "keyvaultdotnetcorequickstart"
+5. Select **Create**.
 ![Publish](./media/PublishToAzure.gif)
 
 #### 8) Enable Managed Service Identity
