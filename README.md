@@ -79,9 +79,10 @@ az keyvault secret show --name "AppSecret" --vault-name "ContosoKeyVault"
 This command shows the secret information including the URI. After completing these steps, you should have a URI to a secret in an Azure Key Vault. Make note of this information. You need it in a later step.
 
 #### 5) Clone the Repo
-    ```
-     git clone https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart.git
-    ```
+
+    
+    git clone https://github.com/Azure-Samples/key-vault-dotnet-core-quickstart.git
+    
 
 #### 6) Open and Edit the solution 
     Open the key-vault-dotnet-core-quickstart.sln file in Visual Studio 2017
@@ -123,7 +124,8 @@ az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group
    ```
 
 Make a note of the output for the command above. It should be of format
-    ```json
+
+    ```
     {
       "principalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
