@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "key-vault-dotnet-core-quickstart", "key-vault-dotnet-core-quickstart\key-vault-dotnet-core-quickstart.csproj", "{46CAEF80-40CB-4BC6-9232-D6640E5E8AA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46CAEF80-40CB-4BC6-9232-D6640E5E8AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46CAEF80-40CB-4BC6-9232-D6640E5E8AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46CAEF80-40CB-4BC6-9232-D6640E5E8AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46CAEF80-40CB-4BC6-9232-D6640E5E8AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9A22FA4-23A5-4EBB-96E9-A7E7547F2C94}
+	EndGlobalSection
+EndGlobal
