@@ -132,9 +132,9 @@ az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group
         }
         
     Run this command next with the PrincipalId copied
-        ```
-        az keyvault set-policy --name '<YourKeyVaultName>' --spn <PrincipalId> --secret-permissions get
-        ```
+    ```
+    az keyvault set-policy --name '<YourKeyVaultName>' --spn <PrincipalId> --secret-permissions get
+    ```
     
 ## Resources
 - [Azure Key Vault Home Page](https://azure.microsoft.com/en-us/services/key-vault/)
