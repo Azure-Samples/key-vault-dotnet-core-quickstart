@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/key-vault-dotnet-core-quickstart/key-vault-dotnet-core-quickstart.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
