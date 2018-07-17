@@ -124,14 +124,13 @@ az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group
    ```
 
 Make a note of the output for the command above. It should be of format
-
-    ```
+    
     {
       "principalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "type": "SystemAssigned"
     }
-    ```
+    
 Run this command next with the PrincipalId copied
     ```
     az keyvault set-policy --name '<YourKeyVaultName>' --spn <PrincipalId> --secret-permissions get
