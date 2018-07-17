@@ -101,9 +101,6 @@ This command shows the secret information including the URI. After completing th
 4. Select **Create**.
 ![Publish](./media/PublishToAzure.gif)
 
->[!IMPORTANT]
-> A browser window opens and you will see a 502.5 - Process Failure message. This is expected. You will need to grant the application identity rights to read secrets from Key Vault.
-
 #### 8) Enable Managed Service Identity
 Azure Key Vault provides a way to securely store credentials and other keys and secrets, but your code needs to authenticate to Key Vault to retrieve them. Managed Service Identity (MSI) makes solving this problem simpler by giving Azure services an automatically managed identity in Azure Active Directory (Azure AD). You can use this identity to authenticate to any service that supports Azure AD authentication, including Key Vault, without having any credentials in your code.
 
@@ -134,7 +131,7 @@ Make a note of the output for the command above. It should be of format
     ```
 Run this command next with the PrincipalId copied
     ```
-    az keyvault set-policy --name <YourKeyVaultName> --spn <PrincipalId> --secret-permissions get
+    az keyvault set-policy --name '<YourKeyVaultName>' --spn <PrincipalId> --secret-permissions get
     ```
 
 ## Resources
