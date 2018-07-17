@@ -118,7 +118,7 @@ az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group
 
 #### 9) Assign permissions to your application to read secrets from Key Vault
 1. Return to the Azure CLI
-2. Run the following command by replacing the placeholders
+2. Run the following commands by replacing the placeholders
    ```
    az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group "<YourResourceGroupName>"
    ```
@@ -131,9 +131,9 @@ az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group
           "type": "SystemAssigned"
         }
         
-    Run this command next with the PrincipalId copied
+    Run this command next with the PrincipalId from above copied
     ```
-    az keyvault set-policy --name '<YourKeyVaultName>' --spn <PrincipalId> --secret-permissions get
+    az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --secret-permissions get
     ```
     
 ## Resources
