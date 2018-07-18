@@ -76,7 +76,7 @@ To view the value contained in the secret as plain text:
 az keyvault secret show --name "AppSecret" --vault-name "ContosoKeyVault"
 ```
 
-This command shows the secret information including the URI. After completing these steps, you should have a URI to a secret in an Azure Key Vault. Make note of this information. You need it in a later step.
+This command shows the secret information including the URI. After completing these steps, you should have a URI to a secret in an Azure Key Vault. 
 
 #### 5) Clone the Repo
 
