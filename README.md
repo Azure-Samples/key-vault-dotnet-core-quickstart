@@ -85,6 +85,7 @@ This command shows the secret information including the URI. After completing th
     
 
 #### 6) Open and Edit the solution 
+    cd into the folder key-vault-dotnet-core-quickstart
     Open the key-vault-dotnet-core-quickstart.sln file in Visual Studio 2017
 
     Open Program.cs file and update the placeholder <YourKeyVaultName> with the name of your Key Vault that you created in Step 3
