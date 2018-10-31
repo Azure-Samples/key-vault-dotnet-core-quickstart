@@ -18,6 +18,7 @@ This project allows you to
     * [.NET Core 2.1 SDK or later](https://www.microsoft.com/net/download/windows)
 - On Mac 
     * https://visualstudio.microsoft.com/vs/mac/
+    * [.NET Core 2.1 SDK or later](https://www.microsoft.com/net/download)
 * [Git](https://www.git-scm.com/)
     * Please download git from [here](https://git-scm.com/downloads).
 * [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
