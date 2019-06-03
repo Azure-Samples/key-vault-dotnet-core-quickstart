@@ -6,33 +6,27 @@ using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Microsoft.Azure.Management.ResourceManager.Fluent;
 using Microsoft.Azure.Management.ResourceManager.Fluent.Authentication;
 // </directives>
+
 namespace akvdotnet
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string secretName = "mySecret";
-
             Program P = new Program();
-            var fetchedSecret = P.GetSecret(secretName);
+            string secretName = "mySecret";
+            string kvURL = "https://myKV-msb.vault.azure.net";
 
-            string secret = fetchedSecret.Result;
-            Console.WriteLine("Your secret is " + secret);
-        }
-
-        public async Task<string> GetSecret(string secretName)
-        {
             // <authentication>
-              
+
             string clientId = Environment.GetEnvironmentVariable("akvClientId");
             string clientSecret = Environment.GetEnvironmentVariable("akvClientSecret");
-            string tenantId = Environment.GetEnvironmentVariable("akvTenantId"); 
-            string subscriptionId = Environment.GetEnvironmentVariable("akvSubscriptionId"); 
+            string tenantId = Environment.GetEnvironmentVariable("akvTenantId");
+            string subscriptionId = Environment.GetEnvironmentVariable("akvSubscriptionId");
 
             AzureCredentials credentials = SdkContext.AzureCredentialsFactory.FromServicePrincipal(clientId, clientSecret, tenantId, AzureEnvironment.AzureGlobalCloud).WithDefaultSubscription(subscriptionId);
 
-            var keyClient = new KeyVaultClient(async (authority, resource, scope) =>
+            KeyVaultClient kvClient = new KeyVaultClient(async (authority, resource, scope) =>
             {
                 var adCredential = new ClientCredential(clientId, clientSecret);
                 var authenticationContext = new AuthenticationContext(authority, null);
@@ -40,12 +34,49 @@ namespace akvdotnet
             });
             // </authentication>
 
-            // <getsecret>
-            string akvUri = "https://mykv-msb.vault.azure.net";
 
-            var keyvaultSecret = await keyClient.GetSecretAsync($"{akvUri}/secrets/{secretName}").ConfigureAwait(false);
-            // </getsecret>
+            Console.Write("Input the value of your secret > ");
+            string secretValue = Console.ReadLine();
+
+            Console.WriteLine("Your secret is '" + secretValue + "'.");
+
+            Console.Write("Saving the value of your secret to your key vault ...");
+
+            // <setsecret>
+            var result = P.SetSecret(kvClient, kvURL, secretName, secretValue);
+            // </setsecret>
+            System.Threading.Thread.Sleep(5000);
+
+            Console.WriteLine("done.");
+
+            Console.WriteLine("Forgetting your secret.");
+            secretValue = "";
+            Console.WriteLine("Your secret is '" + secretValue + "'.");
+            Console.WriteLine("Retrieving your secret from key vault.");
+
+            var fetchedSecret = P.GetSecret(kvClient, kvURL, secretName);
+
+            secretValue = fetchedSecret.Result;
+            Console.WriteLine("Your secret is " + secretValue);
+            }
+
+
+            /// <returns> The created or the updated secret </returns>
+            public async Task<bool> SetSecret(KeyVaultClient kvClient, string kvURL, string secretName, string secretValue)
+            {
+                // <setsecret>
+                await kvClient.SetSecretAsync($"{kvURL}", secretName, secretValue);
+                // </setsecret>
+
+                return true;
+            }
+
+            public async Task<string> GetSecret(KeyVaultClient kvClient, string kvURL, string secretName)
+            {
+            // <getsecret>                
+            var keyvaultSecret = await kvClient.GetSecretAsync($"{kvURL}/secrets/{secretName}").ConfigureAwait(false);
+            // <getsecret>
             return keyvaultSecret.Value;
+            }
         }
     }
-}
