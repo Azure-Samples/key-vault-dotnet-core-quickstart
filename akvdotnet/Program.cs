@@ -77,7 +77,7 @@ namespace akvdotnet
             {
             // <getsecret>                
             var keyvaultSecret = await kvClient.GetSecretAsync($"{kvURL}/secrets/{secretName}").ConfigureAwait(false);
-            // <getsecret>
+            // </getsecret>
             return keyvaultSecret.Value;
             }
         }
