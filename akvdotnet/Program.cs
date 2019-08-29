@@ -1,4 +1,4 @@
-﻿// <directives>
+// <directives>
 using System;
 using System.Threading.Tasks;
 using Microsoft.Azure.KeyVault;
@@ -15,8 +15,8 @@ namespace akvdotnet
         {
             Program P = new Program();
             string secretName = "mySecret";
-            
-            # kvURL must be updated to the URL of your key vault
+
+            // kvURL must be updated to the URL of your key vault
             string kvURL = "https://myKV.vault.azure.net";
 
             // <authentication>
@@ -60,25 +60,25 @@ namespace akvdotnet
 
             secretValue = fetchedSecret.Result;
             Console.WriteLine("Your secret is " + secretValue);
-            }
+        }
 
 
-            /// <returns> The created or the updated secret </returns>
-            public async Task<bool> SetSecret(KeyVaultClient kvClient, string kvURL, string secretName, string secretValue)
-            {
-                // <setsecret>
-                await kvClient.SetSecretAsync($"{kvURL}", secretName, secretValue);
-                // </setsecret>
+        /// <returns> The created or the updated secret </returns>
+        public async Task<bool> SetSecret(KeyVaultClient kvClient, string kvURL, string secretName, string secretValue)
+        {
+            // <setsecret>
+            await kvClient.SetSecretAsync($"{kvURL}", secretName, secretValue);
+            // </setsecret>
 
-                return true;
-            }
+            return true;
+        }
 
-            public async Task<string> GetSecret(KeyVaultClient kvClient, string kvURL, string secretName)
-            {
+        public async Task<string> GetSecret(KeyVaultClient kvClient, string kvURL, string secretName)
+        {
             // <getsecret>                
-            var keyvaultSecret = await kvClient.GetSecretAsync($"{kvURL}/secrets/{secretName}").ConfigureAwait(false);
+            var keyvaultSecret = await kvClient.GetSecretAsync($"{kvURL}", secretName).ConfigureAwait(false);
             // </getsecret>
             return keyvaultSecret.Value;
-            }
         }
     }
+}
