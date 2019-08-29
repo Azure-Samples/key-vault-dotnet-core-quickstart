@@ -15,7 +15,9 @@ namespace akvdotnet
         {
             Program P = new Program();
             string secretName = "mySecret";
-            string kvURL = "https://myKV-msb.vault.azure.net";
+            
+            # kvURL must be updated to the URL of your key vault
+            string kvURL = "https://myKV.vault.azure.net";
 
             // <authentication>
 
