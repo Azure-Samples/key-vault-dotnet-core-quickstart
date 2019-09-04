@@ -17,7 +17,7 @@ namespace akvdotnet
             string secretName = "mySecret";
 
             // kvURL must be updated to the URL of your key vault
-            string kvURL = "https://akvdotnetqs.vault.azure.net";
+            string kvURL = "https://myKV.vault.azure.net";
 
             // <authentication>
 
