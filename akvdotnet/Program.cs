@@ -17,7 +17,7 @@ namespace akvdotnet
             string secretName = "mySecret";
 
             // kvURL must be updated to the URL of your key vault
-            string kvURL = "https://myKV.vault.azure.net";
+            string kvURL = "https://akvdotnetqs.vault.azure.net";
 
             // <authentication>
 
@@ -25,8 +25,6 @@ namespace akvdotnet
             string clientSecret = Environment.GetEnvironmentVariable("akvClientSecret");
             string tenantId = Environment.GetEnvironmentVariable("akvTenantId");
             string subscriptionId = Environment.GetEnvironmentVariable("akvSubscriptionId");
-
-            AzureCredentials credentials = SdkContext.AzureCredentialsFactory.FromServicePrincipal(clientId, clientSecret, tenantId, AzureEnvironment.AzureGlobalCloud).WithDefaultSubscription(subscriptionId);
 
             KeyVaultClient kvClient = new KeyVaultClient(async (authority, resource, scope) =>
             {
