@@ -23,8 +23,6 @@ namespace akvdotnet
 
             string clientId = Environment.GetEnvironmentVariable("akvClientId");
             string clientSecret = Environment.GetEnvironmentVariable("akvClientSecret");
-            string tenantId = Environment.GetEnvironmentVariable("akvTenantId");
-            string subscriptionId = Environment.GetEnvironmentVariable("akvSubscriptionId");
 
             KeyVaultClient kvClient = new KeyVaultClient(async (authority, resource, scope) =>
             {
