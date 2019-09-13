@@ -3,7 +3,7 @@ page_type: sample
 languages:
 - html
 - csharp
-- javasript
+- javascript
 products:
 - azure
 description: "This sample demonstrates how to get started with Key Vault in .NET with Visual Studio Installed"
