@@ -1,3 +1,15 @@
+---
+page_type: sample
+languages:
+- html
+- csharp
+- javasript
+products:
+- azure
+description: "This sample demonstrates how to get started with Key Vault in .NET with Visual Studio Installed"
+urlFragment: key-vault-dotnet-core-quickstart
+---
+
 # Getting Started with Azure Key Vault with .NET Core
 This sample demonstrates how to get started with Key Vault in .NET with Visual Studio Installed
 
