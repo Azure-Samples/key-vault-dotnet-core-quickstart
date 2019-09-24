@@ -7,7 +7,7 @@ languages:
 products:
 - azure
 description: "This sample demonstrates how to get started with Key Vault in .NET with Visual Studio Installed"
-urlFragment: key-vault-dotnet-core-quickstart
+urlFragment: get-started-keyvault-net
 ---
 
 # Getting Started with Azure Key Vault with .NET Core
