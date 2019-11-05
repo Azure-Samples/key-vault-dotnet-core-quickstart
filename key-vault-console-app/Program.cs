@@ -37,7 +37,7 @@ namespace key_vault_console_app
             Console.WriteLine("Retrieving your secret from " + keyVaultName + ".");
 
             // <getsecret>
-            Secret secret = client.GetSecret(secretName);
+            KeyVaultSecret secret = client.GetSecret(secretName);
             // </getsecret>
 
             Console.WriteLine("Your secret is '" + secret.Value + "'.");
@@ -45,7 +45,7 @@ namespace key_vault_console_app
             Console.Write("Deleting your secret from " + keyVaultName + " ...");
 
             // <deletesecret>
-            client.DeleteSecret(secretName);
+            client.StartDeleteSecret(secretName);
             // </deletesecret>
 
             System.Threading.Thread.Sleep(5000);
