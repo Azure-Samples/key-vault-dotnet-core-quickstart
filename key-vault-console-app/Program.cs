@@ -1,4 +1,4 @@
-﻿// <directives>
+// <directives>
 using System;
 using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
@@ -10,6 +10,7 @@ namespace key_vault_console_app
     {
         static void Main(string[] args)
         {
+            bool isSoftDeleteEnabled = true;
             string secretName = "mySecret";
 
             // <authenticate>
@@ -48,9 +49,25 @@ namespace key_vault_console_app
             client.StartDeleteSecret(secretName);
             // </deletesecret>
 
-            System.Threading.Thread.Sleep(5000);
+            if (!isSoftDeleteEnabled)
+            {
+                System.Threading.Thread.Sleep(5000);
+                Console.WriteLine(" done.");
+
+                return;
+            }
+
+            System.Threading.Thread.Sleep(60000);
             Console.WriteLine(" done.");
 
+            Console.Write("Purging your secret from " + keyVaultName + " ...");
+
+            // <purgesecret>
+            client.PurgeDeletedSecret(secretName);
+            // </purgesecret>
+
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine(" done.");
         }
     }
 }
