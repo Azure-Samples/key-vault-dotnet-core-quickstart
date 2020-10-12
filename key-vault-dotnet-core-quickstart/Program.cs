@@ -27,6 +27,6 @@ namespace key_vault_dotnet_core_quickstart
             ).UseStartup<Startup>()
              .Build();
 
-        private static string GetKeyVaultEndpoint() => "https://franktestkv.vault.azure.net";
+        private static string GetKeyVaultEndpoint() => "https://<YourKeyVaultName>.vault.azure.net";
     }
 }
