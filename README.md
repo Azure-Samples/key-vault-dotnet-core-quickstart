@@ -103,12 +103,31 @@ This command shows the secret information including the URI. After completing th
 
     Open Program.cs file and update the placeholder <YourKeyVaultName> with the name of your Key Vault that you created in Step 3
 
-#### 7) Run the app
+#### 7) Set the environment variable for DefaultAzureCredential
+Follow one of the examples below depending on your operating system to create the environment variable. If using Windows close your open IDE or shell and restart it to be able to read the environment variable.
+
+Linux
+
+```bash
+export AZURE_CLIENT_ID="<AZURE_CLIENT_ID>"
+export AZURE_CLIENT_SECRET="<AZURE_CLIENT_SECRET>"
+export AZURE_TENANT_ID="AZURE_TENANT_ID>"
+```
+
+Windows
+
+```cmd
+setx AZURE_CLIENT_ID "<AZURE_CLIENT_ID>"
+setx AZURE_CLIENT_SECRET "<AZURE_CLIENT_SECRET>"
+setx AZURE_TENANT_ID "<AZURE_TENANT_ID>"
+```
+
+#### 8) Run the app
     From the main menu of Visual Studio 2017, choose 
     Debug > Start without Debugging. 
     When the browser appears, navigate to the About page. The value for the AppSecret is displayed.
 
-#### 8) Publish the web application to Azure
+#### 9) Publish the web application to Azure
 
 1. In Visual Studio, select **key-vault-dotnet-core-quickstart** Project.
 2. Select **Publish** then **Start**.
@@ -117,7 +136,7 @@ This command shows the secret information including the URI. After completing th
 5. Select **Create**.
 ![Publish](./media/PublishToAzure.gif)
 
-#### 8) Enable Managed Service Identity
+#### 10) Enable Managed Service Identity
 Azure Key Vault provides a way to securely store credentials and other keys and secrets, but your code needs to authenticate to Key Vault to retrieve them. Managed Service Identity (MSI) makes solving this problem simpler by giving Azure services an automatically managed identity in Azure Active Directory (Azure AD). You can use this identity to authenticate to any service that supports Azure AD authentication, including Key Vault, without having any credentials in your code.
 
 1. Return to the Azure CLI
@@ -130,7 +149,7 @@ az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group
 >[!NOTE]
 >This command is the equivalent of going to the portal and switching **Managed service identity** to **On** in the web application properties.
 
-#### 9) Assign permissions to your application to read secrets from Key Vault
+#### 11) Assign permissions to your application to read secrets from Key Vault
 1. Return to the Azure CLI
 2. Run the following commands by replacing the placeholders
    ```
