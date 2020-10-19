@@ -103,6 +103,7 @@ This command shows the secret information including the URI. After completing th
 
     Open Program.cs file and update the placeholder <YourKeyVaultName> with the name of your Key Vault that you created in Step 3
 
+
 #### 7) Run the app
     From the main menu of Visual Studio 2017, choose 
     Debug > Start without Debugging. 
@@ -117,7 +118,7 @@ This command shows the secret information including the URI. After completing th
 5. Select **Create**.
 ![Publish](./media/PublishToAzure.gif)
 
-#### 8) Enable Managed Service Identity
+#### 9) Enable Managed Service Identity
 Azure Key Vault provides a way to securely store credentials and other keys and secrets, but your code needs to authenticate to Key Vault to retrieve them. Managed Service Identity (MSI) makes solving this problem simpler by giving Azure services an automatically managed identity in Azure Active Directory (Azure AD). You can use this identity to authenticate to any service that supports Azure AD authentication, including Key Vault, without having any credentials in your code.
 
 1. Return to the Azure CLI
@@ -130,7 +131,7 @@ az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group
 >[!NOTE]
 >This command is the equivalent of going to the portal and switching **Managed service identity** to **On** in the web application properties.
 
-#### 9) Assign permissions to your application to read secrets from Key Vault
+#### 10) Assign permissions to your application to read secrets from Key Vault
 1. Return to the Azure CLI
 2. Run the following commands by replacing the placeholders
    ```
