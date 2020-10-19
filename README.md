@@ -103,24 +103,6 @@ This command shows the secret information including the URI. After completing th
 
     Open Program.cs file and update the placeholder <YourKeyVaultName> with the name of your Key Vault that you created in Step 3
 
-#### 7) Set the environment variable for DefaultAzureCredential
-Follow one of the examples below depending on your operating system to create the environment variable. If using Windows close your open IDE or shell and restart it to be able to read the environment variable.
-
-Linux
-
-```bash
-export AZURE_CLIENT_ID="<AZURE_CLIENT_ID>"
-export AZURE_CLIENT_SECRET="<AZURE_CLIENT_SECRET>"
-export AZURE_TENANT_ID="AZURE_TENANT_ID>"
-```
-
-Windows
-
-```cmd
-setx AZURE_CLIENT_ID "<AZURE_CLIENT_ID>"
-setx AZURE_CLIENT_SECRET "<AZURE_CLIENT_SECRET>"
-setx AZURE_TENANT_ID "<AZURE_TENANT_ID>"
-```
 
 #### 8) Run the app
     From the main menu of Visual Studio 2017, choose 
